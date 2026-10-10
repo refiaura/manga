@@ -5,7 +5,7 @@ import type { ApiResponse } from './types';
 
 export interface FetchState<T> {
   data: T | undefined;
-  pagination: ApiResponse['pagination'];
+  pagination: ApiResponse<unknown>['pagination'];
   loading: boolean;
   error: ApiError | null;
   reload(): void;
@@ -17,7 +17,7 @@ export interface FetchState<T> {
  */
 export function useApiFetch<T>(path: string | null): FetchState<T> {
   const [data, setData] = useState<T | undefined>(undefined);
-  const [pagination, setPagination] = useState<ApiResponse['pagination']>(undefined);
+  const [pagination, setPagination] = useState<ApiResponse<unknown>['pagination']>(undefined);
   const [loading, setLoading] = useState(path !== null);
   const [error, setError] = useState<ApiError | null>(null);
   const [tick, setTick] = useState(0);
