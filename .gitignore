@@ -1,0 +1,14 @@
+# Maven / Java
+target/
+*.class
+
+# Node.js / Frontend
+node_modules/
+dist/
+
+# Env & logs (no secrets in git)
+.env
+.env.local
+*.log
+tsconfig.tsbuildinfo
+*.tsbuildinfo

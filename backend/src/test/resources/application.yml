@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: manga-reader-backend-test
+  datasource:
+    url: jdbc:h2:mem:mangatest;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ''
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: test-secret-key-for-unit-and-integration-tests-0123456789
+    expiration-minutes: 60
+    allow-insecure-dev-secret: true
+  cors:
+    allowed-origins: http://localhost:5173
+
+jikan:
+  base-url: http://localhost:1
+  connect-timeout-ms: 500
+  read-timeout-ms: 500
+  cache-ttl-seconds: 60
+  genre-cache-ttl-seconds: 60
+  max-request-per-minute: 1000
+  retry-max-attempts: 0
+
+logging:
+  level:
+    com.example.mangareader: WARN
